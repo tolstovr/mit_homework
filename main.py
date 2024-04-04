@@ -1,20 +1,16 @@
 # import __hello__
-from functools import lru_cache
 
-@lru_cache(None)
 def fib(n):
     if n <= 0:
         return "Неверный ввод"
-    if n <= 2:
-        return n - 1
-    return fib(n-1) + fib(n-2)
-
-
-def get_sequence(n):
+    if n == 1:
+        return [0]
+    if n == 2:
+        return [0, 1]
     sequence = [0, 1]
-    for i in range(2, n):
-        sequence.append(fib(i + 1))
+    for _ in range(2, n):
+        next_number = sequence[-1] + sequence[-2]
+        sequence.append(next_number)
     return sequence
-
     
-print(f"Your fibonacci sequence is:", *get_sequence(int(input("N: "))))
+print(*fib(int(input("N: "))), sep="\n")
