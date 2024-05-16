@@ -1,4 +1,4 @@
-const fib = (n) => (n <= 1 ? n : fib(n - 1) + fib(n - 2))
+const fib = (n) => (n <= 2 ? n - 1 : fib(n - 1) + fib(n - 2))
 
 const readline = require("readline")
 const rl = readline.createInterface({

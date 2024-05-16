@@ -2,7 +2,7 @@
 typedef long long int llint;
 
 llint fib(llint n) {
-    if (n <= 1) return n;
+    if (n <= 2) return n - 1;
     else return fib(n - 1) + fib(n - 2);
 }
 

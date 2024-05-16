@@ -1,8 +1,9 @@
 fun fib(n: Int): Int {
-    if (n <= 1)
-        return n
-    else
-        return fib(n - 1) + fib(n - 2)
+    return if (n <= 2) {
+        n - 1
+    } else {
+        fib(n - 1) + fib(n - 2)
+    }
 }
 
 fun main() {
