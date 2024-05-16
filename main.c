@@ -1,14 +1,19 @@
 #include <stdio.h>
 
-int fib(int n) {
-    if (n <= 2) return n - 1;
-    else return fib(n - 1) + fib(n - 2);
+void fib(int n) {
+    int a = 0, b = 1;
+    for (int i = 0; i < n; ++i) {
+        printf("%d\n", a);
+        int temp = a;
+        a = b;
+        b = temp + b;
+    }
 }
 
 int main() {
     int n;
-    printf("n: ");
+    printf("%s\n", "n:");
     scanf("%d", &n);
-    printf("fib(%d) = %d\n", n, fib(n));
+    fib(n);
     return 0;
 }

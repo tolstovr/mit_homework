@@ -1,15 +1,20 @@
 #include <iostream>
 typedef long long int llint;
 
-llint fib(llint n) {
-    if (n <= 2) return n - 1;
-    else return fib(n - 1) + fib(n - 2);
+void fib(llint n) {
+    int a = 0, b = 1;
+    for (int i = 0; i < n; ++i) {
+        std::cout << a << std::endl;
+        int temp = a;
+        a = b;
+        b = temp + b;
+    }
 }
 
 int main() {
-    llint n;
+    int n;
     std::cout << "n: ";
     std::cin >> n;
-    std::cout << "fib(" << n << ") = " << fib(n) << std::endl;
+    fib(n);
     return 0;
 }

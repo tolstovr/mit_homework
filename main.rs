@@ -1,15 +1,18 @@
-fn fib(n: i32) -> i32 {
-    if n <= 2 {
-        return n - 1;
-    } else {
-        return fib(n - 1) + fib(n - 2);
+use std::io;
+
+fn fib(n: u32) {
+    let (mut a, mut b) = (0, 1);
+    for _ in 0..n {
+        println!("{}", a);
+        let temp = a;
+        a = b;
+        b = temp + b;
     }
 }
 
 fn main() {
     let mut input = String::new();
-    println!("n: ");
-    std::io::stdin().read_line(&mut input).expect("Failed to read line");
-    let n: i32 = input.trim().parse().expect("Please enter a number");
-    println!("fib({}) = {}", n, fib(n));
+    io::stdin().read_line(&mut input).expect("Failed to read line");
+    let n: u32 = input.trim().parse().expect("Please enter a number");
+    fib(n);
 }

@@ -1,13 +1,16 @@
-fun fib(n: Int): Int {
-    return if (n <= 2) {
-        n - 1
-    } else {
-        fib(n - 1) + fib(n - 2)
+fun fib(n: Int) {
+    var a = 0
+    var b = 1
+    repeat(n) {
+        println(a)
+        val temp = a
+        a = b
+        b += temp
     }
 }
 
 fun main() {
     print("n: ")
     val n = readLine()!!.toInt()
-    println("fib($n) = ${fib(n)}")
+    fib(n)
 }

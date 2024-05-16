@@ -1,8 +1,10 @@
-def fib(n: int) -> int:
-    if n <= 2:
-        return n - 1
-    else:
-        return fib(n - 1) + fib(n - 2)
+from typing import Generator
+
+def fib(n: int) -> Generator[int, None, None]:
+    a, b = 0, 1
+    for _ in range(n):
+        yield a
+        a, b = b, a + b
 
 n = int(input("n: "))
-print(f"fib({n}) = {fib(n)}")
+print(*list(fib(n)), sep="\n")
