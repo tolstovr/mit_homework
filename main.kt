@@ -1,3 +1,12 @@
+fun fib(n: Int): Int {
+    if (n <= 1)
+        return n
+    else
+        return fib(n - 1) + fib(n - 2)
+}
+
 fun main() {
-    println("Hello, World!")
+    print("n: ")
+    val n = readLine()!!.toInt()
+    println("fib($n) = ${fib(n)}")
 }

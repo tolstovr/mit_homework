@@ -1,1 +1,8 @@
-import __hello__
+def fib(n: int) -> int:
+    if n <= 1:
+        return n
+    else:
+        return fib(n - 1) + fib(n - 2)
+
+n = int(input("n: "))
+print(f"fib({n}) = {fib(n)}")
